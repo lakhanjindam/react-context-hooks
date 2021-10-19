@@ -9,16 +9,22 @@ class BookList extends Component {
     const theme = isLightTheme ? light : dark;
     console.log(theme);
     return (
-      <div
-        className="book-list"
-        style={{ color: theme.syntax, background: theme.bg }}
-      >
-        <ul>
-          <li style={{ backgroud: theme.ui }}>the book1</li>
-          <li style={{ backgroud: theme.ui }}>the book2</li>
-          <li style={{ backgroud: theme.ui }}>the book3</li>
-        </ul>
-      </div>
+      <ThemeContext.Consumer>
+        {(context) => {
+          return (
+            <div
+              className="book-list"
+              style={{ color: theme.syntax, background: theme.bg }}
+            >
+              <ul>
+                <li style={{ background: theme.ui }}>the book1</li>
+                <li style={{ background: theme.ui }}>the book2</li>
+                <li style={{ background: theme.ui }}>the book3</li>
+              </ul>
+            </div>
+          );
+        }}
+      </ThemeContext.Consumer>
     );
   }
 }
