@@ -7,7 +7,6 @@ class BookList extends Component {
   render() {
     const { isLightTheme, light, dark } = this.context;
     const theme = isLightTheme ? light : dark;
-    console.log(theme);
     return (
       <ThemeContext.Consumer>
         {(context) => {
